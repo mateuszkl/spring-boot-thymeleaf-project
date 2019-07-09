@@ -18,6 +18,7 @@ public class BookProvider {
     @PostConstruct
     public void initialize() {
         Author henryk = new Author("Henryk", "Sienkiewicz", LocalDate.of(1846, 6, 5));
+
         bookMap.put(1L, new Book(henryk, "Quo Vadis", 1896, Genre.HISTORICAL_NOVEL));
         bookMap.put(2L, new Book(henryk, "Quo Vadis", 1896, Genre.HISTORICAL_NOVEL));
     }
