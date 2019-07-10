@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Book {
 
+    private Long id;
     private Author author;
     private String title;
     private Integer year;

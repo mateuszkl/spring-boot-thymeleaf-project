@@ -9,17 +9,17 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/books")
-public class BooksPresenter {
+public class BookController {
 
-    private final BookProvider bookProvider;
+    private final BookService bookService;
 
-    public BooksPresenter(BookProvider bookProvider) {
-        this.bookProvider = bookProvider;
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
     }
 
     @GetMapping("/all")
     public String getBooks(Model model) {
-        List<Book> books = bookProvider.getBooks();
+        List<Book> books = bookService.getBooks();
 
         model.addAttribute("books", books);
         return "books";

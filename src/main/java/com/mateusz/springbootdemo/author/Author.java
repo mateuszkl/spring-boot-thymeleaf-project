@@ -15,4 +15,7 @@ public class Author {
     private String surname;
     private LocalDate birthDate;
 
+    public String getFullName() {
+        return name + " " + surname;
+    }
 }

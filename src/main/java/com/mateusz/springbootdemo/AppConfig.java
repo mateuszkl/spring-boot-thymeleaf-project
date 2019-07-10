@@ -12,12 +12,11 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @EnableWebMvc
 @Configuration
-public class Config implements WebMvcConfigurer {
+public class AppConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/books")
-                .setViewName("books");
+        registry.addViewController("/books");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 
@@ -28,6 +27,7 @@ public class Config implements WebMvcConfigurer {
         resolver.setSuffix(".html");
         resolver.setTemplateMode(TemplateMode.HTML);
         resolver.setCharacterEncoding("UTF-8");
+
         return resolver;
     }
 }

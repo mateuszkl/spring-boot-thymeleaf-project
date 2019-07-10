@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class BookProvider {
+public class BookService {
 
     private Map<Long, Book> bookMap = new HashMap<>();
 
@@ -19,8 +19,8 @@ public class BookProvider {
     public void initialize() {
         Author henryk = new Author("Henryk", "Sienkiewicz", LocalDate.of(1846, 6, 5));
 
-        bookMap.put(1L, new Book(henryk, "Quo Vadis", 1896, Genre.HISTORICAL_NOVEL));
-        bookMap.put(2L, new Book(henryk, "Quo Vadis", 1896, Genre.HISTORICAL_NOVEL));
+        bookMap.put(1L, new Book(1L, henryk, "Quo Vadis", 1896, Genre.HISTORICAL_NOVEL));
+        bookMap.put(2L, new Book(2L, henryk, "Quo Vadis", 1896, Genre.HISTORICAL_NOVEL));
     }
 
     public Book getById(Long id) {
